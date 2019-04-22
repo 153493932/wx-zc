@@ -115,11 +115,12 @@ Page({
               wx.showToast({ title: '无申请记录', icon: 'none'})
             } else {
               var item = res.data[0];
-              var id = item._id;
-              console.log(id)
-              db.collection('db-zc').doc(id).update({
-                // data 字段表示需新增的 JSON 数据
+              wx.cloud.callFunction({
+                // 云函数名称
+                name: 'updateRepair',
+                // 传给云函数的参数
                 data: {
+                  id: item._id,
                   code: item.code,
                   applyDesc: item.applyDesc,
                   applyTime: item.applyTime,
@@ -140,6 +141,29 @@ Page({
                   wx.hideLoading()
                   wx.showToast({ title: '保存失败', icon: 'none'})
                 }
+              // db.collection('db-zc').doc(id).update({
+              //   // data 字段表示需新增的 JSON 数据
+              //   data: {
+              //     code: item.code,
+              //     applyDesc: item.applyDesc,
+              //     applyTime: item.applyTime,
+              //     customer: item.customer,
+              //     phone: item.phone,
+              //     producer: item.name,
+              //     price: that.data.price,
+              //     repairTime: (new Date()).getTime(),
+              //     log: that.data.log,
+              //     status: 'repaired'
+              //   },
+              //   success(res) {
+              //     console.log(res)
+              //     wx.hideLoading()
+              //     wx.navigateBack()
+              //   },
+              //   fail(res) {
+              //     wx.hideLoading()
+              //     wx.showToast({ title: '保存失败', icon: 'none'})
+              //   }
               })
             }
           }
