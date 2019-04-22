@@ -1,0 +1,27 @@
+<!--miniprogram/pages/apply/apply.wxml-->
+<view class='item'>
+<image class='scan-icon' bindtap="doScan" src='../../images/scenarios_2.png'></image>
+<input class='scan-data' bindinput='resultInput' value='{{scanResult}}'></input>
+</view>
+
+<view class='item'>
+<text class='item-name'>产品名称</text>
+<input class='scan-data' bindinput ="nameInput">{{name}}</input>
+</view>
+
+<view class='item'>
+<text class='item-name'>客户名称</text>
+<input class='scan-data' bindinput='customerInput'>{{customer}}</input>
+</view>
+
+<view class='item'>
+<text class='item-name'>联系方式</text>
+<input class='scan-data' bindinput='phoneInput'>{{phone}}</input>
+</view>
+
+<view class='item-detail'>
+<text class='item-name'>故障现象</text>
+<textarea class='text-detail' placeholder='最多80字' maxlength='80' bindinput='descriptionInput'>{{discription}}</textarea>
+</view>
+
+<button class='button-save' bindtap="doSave">保存</button>

@@ -1,0 +1,69 @@
+<!--miniprogram/pages/query/query.wxml-->
+<view class='item'>
+<image class='scan-icon' bindtap="doScan" src='../../images/scenarios_2.png'></image>
+<input class='scan-data' bindinput='resultInput' value='{{scanResult}}'></input>
+</view>
+
+<view class='item'>
+<text class='item-name'>产品名称</text>
+<input class='scan-data' bindinput='producerInput'></input>
+</view>
+
+<view class="section" style='padding:20rpx; font-size: 32rpx;'>
+  <picker
+    mode="date"
+    value="{{startDate}}"
+    start="2019-01-01"
+    end="2059-09-01"
+    bindchange="bindStartDateChange"
+  >
+    <view class="picker">
+      起始日期: {{startDate}}
+    </view>
+  </picker>
+</view>
+
+<view class="section" style='padding:20rpx; font-size: 32rpx;'>
+  <picker
+    mode="date"
+    value="{{endDate}}"
+    start="2019-01-01"
+    end="2059-09-01"
+    bindchange="bindEndDateChange"
+  >
+    <view class="picker">
+      结束日期: {{endDate}}
+    </view>
+  </picker>
+</view>
+
+<button class='button-query' bindtap='onQuery'>查询</button>
+
+<view class='result'>查询结果: </view>
+
+<scroll-view scroll-y class='scroll-box'>
+  <view class='scroll-item' wx:for="{{items}}" wx:key="index">
+    <view class='item-line'>
+        <view>设备: {{item.code}}</view>
+        <view>产品: {{item.producer}}</view>
+    </view>
+    <view class='item-line'>
+        <view>已申请</view>
+        <!-- <view>{{utils.formatTime(item.applyTime)}}</view> -->
+        <view>{{item.applyTime}}</view>
+        <view>客户: {{item.customer}}</view>
+        <view>电话: {{item.phone}}</view>
+    </view>
+    <view class='item-line' style='padding:10rpx; color:red'>
+    故障原因:  {{item.applyDesc}}
+    </view>
+    <view class='item-line'>
+        <view>{{item.status == 'repaired' ? '已维修':'未维修'}}</view>
+        <view>{{item.status == 'repaired' ? item.repairTime : '-.-.-'}}</view>
+        <view>价格: {{item.status == 'repaired' ? item.price : '-'}}</view>
+    </view>
+    <view class='item-line' style='padding:10rpx; color:red'>
+    维修记录:  {{item.status == 'repaired' ? item.log : '-'}}
+    </view>
+  </view>
+</scroll-view>

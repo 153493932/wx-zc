@@ -1,0 +1,102 @@
+/* miniprogram/pages/query/query.wxss */
+/* miniprogram/pages/repair/repair.wxss *//* miniprogram/pages/apply/apply.wxss */
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  width: 100%;
+  height: 120rpx;
+  margin-left: 20rpx;
+  flex-direction: row;
+}
+
+.scan-icon {
+  width: 80rpx;
+  height: 80rpx;
+  background-size: cover;
+}
+
+.scan-data {
+  width: 76%;
+  height: 100rpx;
+  margin-left: 20rpx;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.item-name {
+  display: flex;
+  width: 80rpx;
+  height: 120rpx;
+  font-size: 32rpx;
+  color: black;
+}
+
+.item-detail {
+  display: flex;
+  width: 100%;
+  height: 400rpx;
+  margin-left: 20rpx;
+  flex-direction: row;
+}
+
+.text-detail {
+  display: flex;
+  width: 76%;
+  font-size: 32rpx;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-left: 20rpx;
+}
+
+.button-query {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: 20rpx;
+  font-size: 40rpx;
+  color: black;
+  background-color: white;
+}
+
+.result {
+  display: flex;
+  font-size: 32rpx;
+  color: black;
+  margin: 20rpx;
+}
+
+.scroll-box {
+  display:flex;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.scroll-item {
+  width: 100%;
+  background-color: white;
+  margin-top: 5px;
+  display: flex;
+  font-size: 32rpx;
+  color: black;
+  flex-direction: column;
+}
+
+.item-line {
+  line-height: 40rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item-line view{
+  padding: 10rpx;
+}

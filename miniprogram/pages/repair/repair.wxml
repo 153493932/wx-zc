@@ -1,0 +1,17 @@
+<!--miniprogram/pages/repair/repair.wxml-->
+<view class='item'>
+<image class='scan-icon' bindtap="doScan" src='../../images/scenarios_2.png'></image>
+<input class='scan-data' bindinput='resultInput' value='{{scanResult}}'></input>
+</view>
+
+<view class='item'>
+<text class='item-name'>维修报价</text>
+<input class='scan-data' bindinput='priceInput'>{{price}}</input>
+</view>
+
+<view class='item-detail'>
+<text class='item-name'>维修记录</text>
+<textarea class='text-detail'  placeholder='最多80字' maxlength='80' bindinput='logInput'></textarea>
+</view>
+
+<button class='button-save' bindtap='doSave'>保存</button>

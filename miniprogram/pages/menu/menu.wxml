@@ -1,0 +1,24 @@
+<!--miniprogram/pages/FuncMenu/funcMenu.wxml-->
+
+
+  <view class="menu-item" bindtap="onEnterApply">
+    <image class="item-icon" src='../../images/features_1.png'></image>
+    <text class="item-name">申请</text>
+  </view>
+
+  <view class="menu-item" bindtap="onEnterRepair">
+    <image class="item-icon" src='../../images/features_2.png'></image>
+    <text class="item-name">维修</text>
+  </view>
+
+  <view class="menu-item" bindtap="onEnterStock">
+    <image class="item-icon" src='../../images/features_3.png'></image>
+    <text class="item-name">出库</text>
+  </view>
+
+
+  <view class="menu-item" bindtap="onEnterQuery">
+    <image class="item-icon" src='../../images/features_4.png'></image>
+    <text class="item-name">查询</text>
+  </view>
+
